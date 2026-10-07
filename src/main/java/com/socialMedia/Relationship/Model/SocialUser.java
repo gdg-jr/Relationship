@@ -5,6 +5,11 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
 
 @Entity
 @Data
@@ -17,6 +22,17 @@ public class SocialUser {
     private Long id;
 
     @OneToOne
-    @JoinColumn(name = "social_profile_id")
+    @JoinColumn(name = "profile_id")
     private SocialProfile socialProfile;
+
+    @OneToMany(mappedBy = "socialUser")
+    private List<SocialPost> socialPost = new ArrayList<>();
+
+    @ManyToMany
+    @JoinTable (
+            name = "user_group",
+            joinColumns = @JoinColumn(name = "user_id"),
+            inverseJoinColumns = @JoinColumn(name = "group_id")
+    )
+    private Set<SocialGroup> socialGroup = new HashSet<>();
 }
