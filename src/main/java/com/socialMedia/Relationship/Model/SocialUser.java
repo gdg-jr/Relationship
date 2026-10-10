@@ -19,7 +19,7 @@ public class SocialUser {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long UserId;
 
     @OneToOne
     @JoinColumn(name = "profile_id")
@@ -30,7 +30,7 @@ public class SocialUser {
 
     @ManyToMany
     @JoinTable (
-            name = "user_group",
+            name = "user_group_map",
             joinColumns = @JoinColumn(name = "user_id"),
             inverseJoinColumns = @JoinColumn(name = "group_id")
     )

@@ -16,7 +16,7 @@ public class SocialGroup {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long groupId;
 
     @ManyToMany(mappedBy = "socialGroup")
     private Set<SocialUser> userSet = new HashSet<>();

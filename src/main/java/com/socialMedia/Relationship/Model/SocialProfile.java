@@ -13,7 +13,7 @@ public class SocialProfile {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long profileId;
 
     @OneToOne (mappedBy = "socialProfile")
     //@JoinColumn(name = "social_user")

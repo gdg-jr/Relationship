@@ -13,7 +13,7 @@ public class SocialPost {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long postId;
 
     @ManyToOne
     @JoinColumn(name = "user_id")
