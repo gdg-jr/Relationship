@@ -21,8 +21,7 @@ public class SocialUser {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long UserId;
 
-    @OneToOne
-    @JoinColumn(name = "profile_id")
+    @OneToOne(mappedBy = "socialUser")
     private SocialProfile socialProfile;
 
     @OneToMany(mappedBy = "socialUser")
