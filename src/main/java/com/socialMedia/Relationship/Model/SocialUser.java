@@ -21,7 +21,7 @@ public class SocialUser {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long UserId;
 
-    @OneToOne(mappedBy = "socialUser")
+    @OneToOne(mappedBy = "socialUser", cascade = CascadeType.ALL)
     private SocialProfile socialProfile;
 
     @OneToMany(mappedBy = "socialUser")
